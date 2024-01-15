@@ -47,7 +47,7 @@
 
 
 -creamos 2 carpetas en nuestra aplicacion :
-     -template que contendra otra app con el nombre de la aplicacion y dentro de esta carpeta un archivo html que sera el base o padre y otro archivo que heredara  del padre gracias a {% extends 'template.html' %}
+     -template que contendra otra carpeta con el nombre de la aplicacion y dentro de esta carpeta un archivo html que sera el base o padre y otro archivo que heredara  del padre gracias a {% extends 'direccion de la carpeta/la plantilla padre' %}
 
 
 -creamos las vistas

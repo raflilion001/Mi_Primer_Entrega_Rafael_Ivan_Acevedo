@@ -1,6 +1,18 @@
-{% extends 'Cliente/base.html' %}
+{% extends 'Clientes/base.html' %}
 
 
 {% block contenido %}
     
+      <form method="post">
+        {% csrf_token %}
+
+        {{form}}
+
+          <button type="submit">Guardar</button>
+
+
+
+      </form>
+
+
 {% endblock contenido %}

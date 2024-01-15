@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
+from . import models,forms   # me permite consultar a la base de datos
 
-from . import models   # me permite consultar a la base de datos
 
 
 def index(request):
@@ -16,3 +16,18 @@ def profesor_list(request):
     
     return render (request, "Clientes/profesor_list.html", contexto) #renderiza  la pagina html con el contexto
 #que seria el diccionario   con el nombre profesor/s
+
+
+def profesor_creat(request):
+    
+    if request.method =="POST":
+        form =forms.ProfesorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("profesor_list")#nombre de la url
+        
+    else:
+        form= forms.ProfesorForm()  
+        
+    return render(request,"Clientes/profesor_creat.html",{"form":form})#el contexto es un diccionario
+#la calve es un string yel valor es una instancia          

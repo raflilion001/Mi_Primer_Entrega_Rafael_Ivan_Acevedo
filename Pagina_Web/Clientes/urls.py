@@ -6,7 +6,8 @@ from . import views
 urlpatterns = [
    
     path('',views.index,name ="index"),
-    path('profesor/list',views.profesor_list,name='profesor_list'), 
-    #path('profesor/creat', views.profesor_creat, name ="profesor_creat"),
+    path('profesor/list',views.profesor_list,name='profesor_list'), #el name es el nombre que tenemos que usar 
+    #en el html <button><a href="{% url 'profesor_list' %}">Ver  Profesores</a></button>
+    path('profesor/creat', views.profesor_creat, name ="profesor_creat"),
 ]
 
