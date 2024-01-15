@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Clientes",
-    
+    "Alumnos",
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Pagina_Web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':  [os.path.join(BASE_DIR, 'Clientes', 'template')],
+        'DIRS':  [os.path.join(BASE_DIR, 'Clientes', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

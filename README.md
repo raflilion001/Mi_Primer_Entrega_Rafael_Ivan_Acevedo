@@ -26,7 +26,11 @@
   -Django
 
 
--Creamos las aplicaciones
+-Creamos las aplicaciones con : python manage.py startapp nombre de la app
+
+-Agregamos la app a settings en el apartado INSTALLED_APPS 
+
+-Creamos un archivo urls.py
 
 -creamos los models 
 
@@ -47,10 +51,12 @@
 
 
 -creamos 2 carpetas en nuestra aplicacion :
-     -template que contendra otra carpeta con el nombre de la aplicacion y dentro de esta carpeta un archivo html que sera el base o padre y otro archivo que heredara  del padre gracias a {% extends 'direccion de la carpeta/la plantilla padre' %}
+     -template que contendra otra carpeta con el nombre de la aplicacion y dentro de esta carpeta un archivo html que sera el base o padre y los demas archivos que heredaran  del padre gracias a {% extends 'direccion de la carpeta/la plantilla padre' %}
 
 
--creamos las vistas
+-creamos un archivo forms.py sirve para : simplificar el proceso al crear automáticamente campos basados en los campos del modelo asociado
+
+-creamos las vistas y las vinculamos con el forms y el models y los templates
 
 
 -Ejecutamos el servidor

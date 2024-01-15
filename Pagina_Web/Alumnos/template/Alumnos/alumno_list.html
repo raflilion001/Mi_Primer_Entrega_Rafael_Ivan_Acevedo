@@ -1,0 +1,16 @@
+{% extends 'Alumno/base.html' %}
+
+
+{% block contenido %}
+    {% for alumno in alumnos  %}  
+       <ul>
+            <li>
+
+                {{ profesor.nombre }}
+                {{ profesor.apellido }}
+                {{ profesor.email }}
+
+            </li>
+       </ul>   
+    {% endfor %}
+{% endblock contenido %}
