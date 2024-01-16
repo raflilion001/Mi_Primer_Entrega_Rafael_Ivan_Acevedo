@@ -12,7 +12,7 @@ class ProfesorForm(forms.ModelForm):
 
 class EstudianteForm(forms.ModelForm):
     
-    class Meta: 
+    class Meta:
         model = models.Estudiante
-        fields = "__all__"
+        fields = ['nombre', 'apellido', 'email']
         

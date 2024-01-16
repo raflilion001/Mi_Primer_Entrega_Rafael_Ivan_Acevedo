@@ -21,7 +21,7 @@ def profesor_creat(request):
     else:
         form= forms.ProfesorForm()    
     return render(request,"Clientes/profesor_creat.html",{"form":form})#el contexto es un diccionario
-#la calve es un string yel valor es una instancia          
+#la calve es un string y el valor es una instancia          
 
 
 
