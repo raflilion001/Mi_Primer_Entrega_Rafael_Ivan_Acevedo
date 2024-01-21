@@ -10,6 +10,10 @@
                 {{ profesor.apellido }}
                 {{ profesor.email }}
 
+                <button>  
+                    <a href="{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+                </button>
+
             </li>
        </ul>   
     {% endfor %}

@@ -1,6 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from . import models,forms   # me permite consultar a la base de datos
-
+from django.http import JsonResponse
 
 
 def index(request):
@@ -14,7 +14,7 @@ def profesor_list(request):
 
 def profesor_creat(request):
     if request.method =="POST":
-        form =forms.ProfesorForm(request.POST)
+        form =forms.ProfesorForm(request.POST)# aqui nos llega la informacion del html
         if form.is_valid():
             form.save()
             return redirect("profesor_list")#nombre de la url
@@ -40,3 +40,14 @@ def alumnos_creat(request):
     else:
         form= forms.EstudianteForm()    
     return render(request,"Clientes/alumnos_creat.html",{"form":form})
+
+
+def eliminar_profesor(request,profesor_nombre):
+    profesor = models.Profesor.objects.get(nombre=profesor_nombre)
+    profesor.delete()
+    
+    profesores =models.Profesor.objects.all() 
+    contexto = {"profesores":profesores}
+    return render (request, "Clientes/profesor_list.html",contexto)
+
+#en todo lo que implique crear o modificar la base de datos utilizaremos obligatoriamente el if 
