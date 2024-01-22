@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from . import models,forms   # me permite consultar a la base de datos
 from django.http import JsonResponse
-
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
 def index(request):
      return render(request,"Clientes/index.html")#carpeta de la app + direccion html
@@ -51,3 +52,8 @@ def eliminar_profesor(request,profesor_nombre):
     return render (request, "Clientes/profesor_list.html",contexto)
 
 #en todo lo que implique crear o modificar la base de datos utilizaremos obligatoriamente el if 
+
+
+
+    
+    

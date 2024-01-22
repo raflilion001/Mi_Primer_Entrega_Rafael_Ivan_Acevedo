@@ -2,15 +2,23 @@
 
 
 {% block contenido %}
+<center>
+<h1> Lista de Estudiantes</h1>
+</center>
+
     {% for estudiante in alumnos  %}  
        <ul>
+        
             <li>
 
                 {{ estudiante.nombre }}
+
                 {{ estudiante.apellido }}
+
                 {{ estudiante.email }}
 
             </li>
        </ul>   
     {% endfor %}
+    <button><a href="{% url 'index' %}">Atras</a></button>
 {% endblock contenido %}

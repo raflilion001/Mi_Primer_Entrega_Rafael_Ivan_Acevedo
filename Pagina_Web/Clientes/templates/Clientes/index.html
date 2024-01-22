@@ -1,18 +1,50 @@
 {% extends 'Clientes/base.html' %}
 
 {% block contenido %}
+
+<center>
+    <h1> Pagina principal</h1>
+    </center>
+<style>
+
     
-         <h1>Entrega</h1>
+  body {
+    margin: 0; /* Elimina los márgenes predeterminados del body */
+  }
 
-         <button><a href="{% url 'profesor_list' %}">Ver  Profesores</a></button>
+  .contenido {
+    display: flex;
+    height: 100vh; /* Ajusta la altura al 100% del viewport */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 
-         <button><a href="{% url 'profesor_creat' %}">Crear  Profesores</a></button>
-         
+  .columna {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye los elementos de manera pareja */
+    height: 50%;
+    width: 50%;
+  }
 
-         <button><a href="{% url 'alumnos_list' %}">Ver  Alumnos</a></button>
+  button {
+    height: 10%;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+</style>
 
-         <button><a href="{% url 'alumnos_creat' %}">Crear  Alumnos</a></button>
-           
+<div class="contenido">
+  <div class="columna">
+    <button><a href="{% url 'profesor_list' %}">Ver Profesores</a></button>
+    <button><a href="{% url 'profesor_creat' %}">Crear Profesores</a></button>
+  </div>
 
-
+  <div class="columna">
+    <button><a href="{% url 'alumnos_list' %}">Ver Alumnos</a></button>
+    <button><a href="{% url 'alumnos_creat' %}">Crear Alumnos</a></button>
+  </div>
+</div>
 {% endblock contenido %}

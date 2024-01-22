@@ -2,20 +2,32 @@
 
 
 {% block contenido %}
+
+<center>
+    <h1> Lista de Profesores</h1>
+ </center>
     {% for profesor in profesores  %}  
        <ul>
             <li>
 
                 {{ profesor.nombre }}
+
                 {{ profesor.apellido }}
+                
                 {{ profesor.email }}
 
                 <button>  
                     <a href="{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+
+                    
                 </button>
 
             </li>
-       </ul>   
+            
+       </ul> 
+       
     {% endfor %}
+
+    <button><a href="{% url 'index' %}">Atras</a></button>
 {% endblock contenido %}
 
