@@ -53,7 +53,13 @@ def eliminar_profesor(request,profesor_nombre):
 
 #en todo lo que implique crear o modificar la base de datos utilizaremos obligatoriamente el if 
 
-
+def eliminar_estudiante(request,estudiante_nombre):
+    estudiante = models.Profesor.objects.get(nombre=estudiante_nombre)
+    estudiante.delete()
+    
+    estudiantes =models.Profesor.objects.all() 
+    contexto = {"estudiantes":estudiantes}
+    return render (request, "Clientes/estudiantes_list.html",contexto)
 
     
     

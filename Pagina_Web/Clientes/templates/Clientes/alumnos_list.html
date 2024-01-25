@@ -1,24 +1,28 @@
 {% extends 'Clientes/base.html' %}
 
-
 {% block contenido %}
 <center>
 <h1> Lista de Estudiantes</h1>
 </center>
+     <table border="1">
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+           {% for estudiante in alumnos  %}            
+             <tr>
+                  <td> {{ estudiante.nombre }}</td> 
+                  <td>  {{ estudiante.apellido }} </td> 
+                  <td> {{ estudiante.email }} </td> 
 
-    {% for estudiante in alumnos  %}  
-       <ul>
-        
-            <li>
-
-                {{ estudiante.nombre }}
-
-                {{ estudiante.apellido }}
-
-                {{ estudiante.email }}
-
-            </li>
-       </ul>   
-    {% endfor %}
+                  <td>    <button>  
+                    <a href="{% url 'EliminarEstudiante' estudiante.nombre %}">Eliminar</a>
+                          </button></td> 
+             </tr>     
+            {% endfor %}
+        </tbody>
+     </table>
     <button><a href="{% url 'index' %}">Atras</a></button>
 {% endblock contenido %}

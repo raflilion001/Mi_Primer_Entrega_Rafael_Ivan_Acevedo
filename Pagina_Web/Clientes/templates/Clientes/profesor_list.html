@@ -1,33 +1,34 @@
 {% extends 'Clientes/base.html' %}
 
-
 {% block contenido %}
 
 <center>
     <h1> Lista de Profesores</h1>
  </center>
-    {% for profesor in profesores  %}  
-       <ul>
-            <li>
-
-                {{ profesor.nombre }}
-
-                {{ profesor.apellido }}
+        <table border="1">
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
                 
-                {{ profesor.email }}
 
-                <button>  
-                    <a href="{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+            </thead>
+            <tbody>
+                {% for profesor in profesores  %}  
+                <tr>
+                        
+                      <td>  {{ profesor.nombre }}</td> 
+                      <td> {{ profesor.apellido }} </td> 
+                       <td> {{ profesor.email }}</td> 
 
-                    
-                </button>
-
-            </li>
-            
-       </ul> 
-       
-    {% endfor %}
-
+                         <td>    <button>  
+                                <a href="{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+                            </button></td> 
+                         
+                    </tr> 
+                {% endfor %}
+            </tbody>
+        </table>
     <button><a href="{% url 'index' %}">Atras</a></button>
 {% endblock contenido %}
 
